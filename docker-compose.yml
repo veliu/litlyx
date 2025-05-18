@@ -33,8 +33,6 @@ services:
       # Change with your redis password
       REDIS_PASSWORD: "litlyx"
       STREAM_NAME: "LITLYX"
-    build:
-      dockerfile: ./producer/Dockerfile
 
   consumer:
     image: litlyx/litlyx-consumer
@@ -54,8 +52,6 @@ services:
       REDIS_PASSWORD: "litlyx"
       STREAM_NAME: "LITLYX"
       GROUP_NAME: "DATABASE"
-    build:
-      dockerfile: ./consumer/Dockerfile 
 
   dashboard:
     image: litlyx/litlyx-dashboard
@@ -104,9 +100,6 @@ services:
       # Optional - Stripe secret - Used to change plans of the projects
       # NUXT_STRIPE_SECRET: ""
       # NUXT_STRIPE_WH_SECRET: ""
-
-    build:
-      dockerfile: ./dashboard/Dockerfile 
       #args:
         # Optional - Used to register / login via google
         # GOOGLE_AUTH_CLIENT_ID: ""
